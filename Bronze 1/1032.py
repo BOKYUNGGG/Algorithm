@@ -12,8 +12,36 @@
 # 가능하면 ?을 적게 써야 한다. 
 # 그 디렉토리에는 검색 결과에 나온 파일만 있다고 가정하고, 파일 이름의 길이는 모두 같다.
 
-
+# 입력 요구사항
+# 파일 이름의 개수 입력
 N = int(input())
+# 파일 이름을 N번 만큼 입력
 arr = [input() for _ in range(N)] 
 
-print(arr)
+
+
+# 문자열의 문자를 처음부터 끝까지 
+# 배열에서 탐색하면서
+# 같지 않은 문자가 있으면 그 자리에 ? 을 대체하고 반복문 탈출
+
+# 문자열은 immutable 특성을 갖으므로 특정 인덱스의 문자를 변경할 수 없다.
+# 따라서 result를 따로 저장해야
+
+result = ""
+for i in range(len(arr[0])) : # 0 1 2 3 4 5
+    for j in range(len(arr)) : # 0 1 2
+        if arr[0][i] != arr[j][i] : 
+            result += "?"
+            break
+        
+        if j == len(arr)-1 : result += arr[0][i]
+        
+print(result)
+
+print(''.join(
+                [
+                    ['?', c[0]][len(set(c)) == 1] 
+                        for c in zip(*(input() for _ in range(int(input()))))
+                ]
+             )
+    )
