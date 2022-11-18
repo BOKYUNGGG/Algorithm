@@ -23,4 +23,3 @@ else :
     분모 = int(n+1-(rest-1))
 
 print(분자, "/", 분모, sep="")
-
