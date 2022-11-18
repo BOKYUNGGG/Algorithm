@@ -13,6 +13,15 @@
 
 
 N = int(input())
-공포도 = list(map(int, input().split()))
+people = list(map(int, input().split()))
+answer = 0
+people.sort()
 
-print(공포도)
+group = []
+for person in people :
+    group.append(person)
+    if person == len(group) : 
+        answer += 1
+        group = []
+
+print(answer)
