@@ -12,15 +12,17 @@
 # a 6
 T = input()
 x, y = T[0], T[1]
-alpha = ['a','b','c','d','e','f','g','h']
+# alpha = ['a','b','c','d','e','f','g','h']
 
-for i in range(8) :
-    if x == alpha[i] : x = i
+# for i in range(8) :
+#     if x == alpha[i] : x = i
+
+x = int(ord(x)) - int(ord('a')) + 1
 y = int(y)
 
 # 방향 벡터
 dx = [+2, +2, +1, +1, -2, -2, -1, -1]
-dy = [+1, -1, +2, -2, +1, -1, +1, -1]
+dy = [+1, -1, +2, -2, +1, -1, +2, -2]
 
 answer = 0
 
