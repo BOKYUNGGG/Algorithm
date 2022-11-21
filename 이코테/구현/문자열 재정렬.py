@@ -8,17 +8,19 @@ input_data = list(input())
 total = 0
 arr = []
 
-
+# arr = ['K', 'K', 'A', 'C', 'B']
+# total = 13
 for element in input_data :
     if element.isalpha():
         arr.append(element)
     else : 
         total += int(element)
+
 # arr = ['A', 'B', 'C', 'K', 'K']
 arr.sort()
 
+# arr = ['A', 'B', 'C', 'K', 'K', '13']
 if total != 0:
-    # arr = ['A', 'B', 'C', 'K', 'K', '13']
     arr.append(str(total))
 
 # ABCKK13
