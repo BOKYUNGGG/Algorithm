@@ -29,53 +29,59 @@ for i in range(N) :
         if array[i][j] == 'W' : array[i][j] = -1
 # print(*array, sep='\n')        
 
+for row in range(N-8) :
+    for col in range(M-8):
+        print("("+row+","+col+")")
 
-rows = []
-cols = []
 
-# 행 총합 계산 후 rows에 삽입
-for i in range(N) : 
-    temp = 0
 
-    for j in range(M) :
-        temp += array[i][j]    
+
+# rows = []
+# cols = []
+
+# # 행 총합 계산 후 rows에 삽입
+# for i in range(N) : 
+#     temp = 0
+
+#     for j in range(M) :
+#         temp += array[i][j]    
     
-    rows.append(temp)
+#     rows.append(temp)
 
-# 열 총합 계산 후 cols에 삽입
-for i in range(M) : 
-    temp = 0
+# # 열 총합 계산 후 cols에 삽입
+# for i in range(M) : 
+#     temp = 0
 
-    for j in range(N) :
-        temp += array[j][i]    
+#     for j in range(N) :
+#         temp += array[j][i]    
     
-    cols.append(temp)
+#     cols.append(temp)
 
-print("rows : ", rows)
-print("cols : ", cols)
+# print("rows : ", rows)
+# print("cols : ", cols)
 
-# 이상적인 8*8 찾는 방법?
+# # 이상적인 8*8 찾는 방법?
 
 
-total_rows = []
-total_cols = []
+# total_rows = []
+# total_cols = []
 
-for i in range(N-7) :
-    temp = 0
-    for j in range(8) : 
-        temp += rows[j+i]
+# for i in range(N-7) :
+#     temp = 0
+#     for j in range(8) : 
+#         temp += rows[j+i]
     
-    total_rows.append(temp)
+#     total_rows.append(temp)
 
-for i in range(M-7) :
-    temp = 0
-    for j in range(8) : 
-        temp += cols[j+i]    
-    total_cols.append(temp)
-
-
-print("total_rows : ", total_rows)
-print("total_cols : ", total_cols)
+# for i in range(M-7) :
+#     temp = 0
+#     for j in range(8) : 
+#         temp += cols[j+i]    
+#     total_cols.append(temp)
 
 
-# 뭔가 이상...
+# print("total_rows : ", total_rows)
+# print("total_cols : ", total_cols)
+
+
+# # 뭔가 이상...
