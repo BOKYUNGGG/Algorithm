@@ -29,10 +29,6 @@ for i in range(N) :
         if array[i][j] == 'W' : array[i][j] = -1
 # print(*array, sep='\n')        
 
-for row in range(N-8) :
-    for col in range(M-8):
-        print("("+row+","+col+")")
-
 
 
 
