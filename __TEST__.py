@@ -1,4 +1,2 @@
-graph = []
-input_data = list(map(int, input()))
-
-print(input_data)
+test = [0]*6
+print(test)
