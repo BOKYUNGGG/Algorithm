@@ -7,6 +7,16 @@
 # 부모 자식간의 관계를 나타내는 두 번호 x, y 
 # x = y의 부모 번호
 
+def dfs(graph, node, visited):
+    answer = 0
+    
+    visited[node] = True
+
+    for i in graph[node]:
+        if not visited[i] :
+            dfs(graph, i, visited)
+
+
 n = int(input())
 graph = [[] for _ in range(n+1)]
 
@@ -18,4 +28,5 @@ for _ in range(int(input())) :
     graph[child].append(parent)
 
 print(*graph, sep='\n')
+
 
