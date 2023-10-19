@@ -5,7 +5,6 @@ const students = Array.from({length:30}, ()=>false)
 for(let i=0;i<inputs.length;i++){
     students[inputs[i]-1] = true
 }
-console.log(students)
 let count = 0
 for(let [i,v] of students.entries()){
     if(count == 2) {
