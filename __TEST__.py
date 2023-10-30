@@ -1,4 +1,9 @@
-graph = []
-input_data = list(map(int, input()))
+from collections import deque
 
-print(input_data)
+start = [(0,0), (2,2), (4,5)]
+queue = deque([start])
+print(queue)
+
+while queue : 
+    v = queue.popleft()
+    print(v)

@@ -1,0 +1,24 @@
+def binary_search(array, target, start, end) :
+    while start <= end :
+        mid = (start + end) // 2
+
+        # 찾은 경우 중간점 인덱스 반환 
+        if array[mid] == target :
+            return mid
+        # 찾고자 하는 값보다 중간점의 값이 더 큰 경우 왼쪽 확인
+        elif target < array[mid] :
+            end = mid - 1
+        # 찾고자 하는 값보다 중간점의 값이 더 작은 경우 오른쪽 확인
+        else :
+            start = mid + 1
+
+    return None
+
+N, target = map(int, input().split())
+array = list(map(int, input().split()))
+result = binary_search(array, target, 0, N-1)
+
+if result == None :
+    print('원소가 존재하지 않습니다.')
+else :
+    print(result + 1)
