@@ -1,9 +1,30 @@
-from collections import deque
 
-start = [(0,0), (2,2), (4,5)]
-queue = deque([start])
-print(queue)
 
-while queue : 
-    v = queue.popleft()
-    print(v)
+# Write your code here:
+def get_yearly_revenue(monthly_revenue) :
+  return monthly_revenue * 12
+  
+def get_yearly_expenses(monthly_expenses) :
+  return monthly_expenses * 12
+  
+def get_tax_amount(profit):
+  return profit * 0.3
+  
+def apply_tax_credits(tax_amount, tax_credits) :
+  return tax_amount * tax_credits
+
+# Don't touch anthing below this line 🙅🏻‍♂️🙅🏻‍♀️
+
+monthly_revenue = 5500000
+monthly_expenses = 2700000
+tax_credits = 0.01
+
+profit = get_yearly_revenue(monthly_revenue) - get_yearly_expenses(monthly_expenses)
+
+tax_amount = get_tax_amount(profit)
+
+final_tax_amount = tax_amount - apply_tax_credits(tax_amount, tax_credits)
+
+print(f"Your tax bill is: ${final_tax_amount}")
+
+
