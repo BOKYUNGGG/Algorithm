@@ -4,9 +4,6 @@ const input = `3 3
 0 1 0
 3 3 3
 4 4 4
-<<<<<<< HEAD
-5 5 100`
-=======
 5 5 100`.split('\n')
 
 
@@ -31,4 +28,3 @@ for(let i=0;i<N;i++){
     }
     console.log(row.join(' '))
 }
->>>>>>> refs/remotes/origin/main
