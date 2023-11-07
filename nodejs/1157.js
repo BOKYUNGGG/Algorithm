@@ -1,4 +1,4 @@
-//const input = require('fs').readFileSync('/dev/stdin').toString().trim()
+//const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('').map(x=>x.toUpperCase())
 const input = 'zZa'.split('').map(x=>x.toUpperCase())
 const info = {}
 

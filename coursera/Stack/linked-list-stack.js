@@ -5,7 +5,7 @@ class Node{
     }
 }
 
-class Stack{
+class LinkedListStack{
     constructor(){
         this.first = null
         this.size = 0
@@ -27,7 +27,7 @@ class Stack{
         return poppedNode
     }
 }
-const stack = new Stack()
+const stack = new LinkedListStack()
 stack.push('Hello')
 stack.push('World')
 stack.push('!')
