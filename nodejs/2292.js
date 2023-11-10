@@ -12,7 +12,10 @@ while(true){
     // console.log(`nextWindow = 6 * (${windowsIndex} + 1) = ${nextWindow}`)
     // console.log(`${N} < ${sum} + ${nextWindow} -> ${N < sum + nextWindow}`)
     // console.log('===================')
-
+    if(N===1) {
+        console.log(1)
+        break
+    }
     if(N <= sum + nextWindow){
         console.log(windows.length+1)
         break

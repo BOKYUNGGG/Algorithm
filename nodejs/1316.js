@@ -1,10 +1,10 @@
-const input = [4, 'aba', 'abab', 'abcabc', 'a']
-// const input = require('fs').readFileSync('/dev/stdin').toString().split('\n')
+// const input = [4, 'aba', 'abab', 'abcabc', 'a']
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n')
+
 const isInLibrary = (library, book) =>{
     return library[book]
 }
-// happy
-// aa bb c b
+
 const isGroupWord = (word) =>{
     const library = {
         // a : true
@@ -14,8 +14,6 @@ const isGroupWord = (word) =>{
     // 임시책
     let beforeBook = ''
     for(let i=0;i<word.length;i++){
-        console.log(`word${[i]} = ${word[i]}`)
-
         // 1. copy the word
         let nowBook = word[i]
         // 2. 바로 이전과 같은 책이라면 다음 책으로 건너뛰기
@@ -37,7 +35,6 @@ const isGroupWord = (word) =>{
 
 let answer = 0
 for(let i=0;i<Number(input[0]);i++){
-    console.log(input[i+1])
     if(isGroupWord(input[i+1])){
         answer++
     }

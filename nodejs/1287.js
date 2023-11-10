@@ -98,5 +98,3 @@ while(vals.howManyItems() !== 1){
     console.log('vals = ',vals)
     console.log(' ')
 }
-
-if()
