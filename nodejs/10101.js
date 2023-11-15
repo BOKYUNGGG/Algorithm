@@ -1,5 +1,5 @@
 // const input = require('fs').readFileSync('/dev/stdin').toString().split('\n').map(x=>Number(x))
-const input = [80,50,50]
+const input = [5,5,50]
 function sum(array){
     return array.reduce((acc,val)=>acc+val)
 }
