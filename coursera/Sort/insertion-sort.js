@@ -1,7 +1,4 @@
 class InsertionSort{
-    constructor(){
-
-    }
     sort(array){
         const N = array.length
         for(let i = 0; i < N; i++){
