@@ -10,7 +10,7 @@ const input = ['3 3',
 ]
 const [N, M] = input.shift().split(' ').map(Number)
 const set = new Set(input.slice(0,N))
-const array = input.slice(N)
+const array = input.slice(1+N)
 let count = 0
 for(let i=0;i<array.length;i++){
     if(set.has(array[i])) count ++
