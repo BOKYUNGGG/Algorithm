@@ -1,4 +1,4 @@
-const [A,B] = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ')
+const [A,B] = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ').map(Number)
 
 function GCD(a,b){
     if(b === 0 ){
