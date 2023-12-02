@@ -10,6 +10,7 @@ function navigateCircularStructure(obj, targetKey, steps) {
       console.log('current Object ', currentObj)
       console.log('current Path ', currentPath)
       console.log('current Steps ', currentSteps)
+      
       if (typeof currentObj === 'object' && currentObj !== null) {
         visited.add(currentObj);
   
