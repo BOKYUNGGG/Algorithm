@@ -1,44 +1,43 @@
-function navigateCircularStructure(obj, targetKey, steps) {
-    const visited = new Set();
-  
-    function dfs(currentObj, currentPath, currentSteps) {
-      if (currentSteps === steps) {
-        console.log('찾음 : ', currentObj)
-        return currentObj;
-      } 
-      console.log('=============================')
-      console.log('current Object ', currentObj)
-      console.log('current Path ', currentPath)
-      console.log('current Steps ', currentSteps)
-      
-      if (typeof currentObj === 'object' && currentObj !== null) {
-        visited.add(currentObj);
-  
-        for (const [key, value] of Object.entries(currentObj)) {
-          const newPath = [...currentPath, key];
-  
-          if (!visited.has(value)) {
-            dfs(value, newPath, currentSteps + 1);
-          }
-        }
+class Graph {
+  constructor(){
+    this.vertices = []
+    this.adjList = new Map()
+  }
+  addVertex(vertex){
+    this.vertices.push(vertex)
+    this.adjList.set(vertex, [])
+  }
+  addEdge(v,w){
+    this.adjList.get(v).push(w)
+    this.adjList.get(w).push(v)
+  }
+  dfs(startVertex, visited = { }){
+    visited[startVertex] = true
+
+    console.log(startVertex)
+
+    const neighbors = this.adjList.get(startVertex)
+
+    for(const neighbor of neighbors){
+      if(!visited[neighbor]){
+        this.dfs(neighbor, visited)
       }
     }
-  
-    return dfs(obj, [], 0);
   }
-  
-const obj1 = { 
-    aValue : 'a',
-    a: { 
-        bValue : 'b',
-        b: { 
-            cValue : 'c',
-            c: {
-                temp : 'asd',
-                hello : 'world'
-            } 
-        } 
-    } 
-};
-  obj1.circularRef = obj1;
-  console.log(navigateCircularStructure(obj1, 'circularRef', 3))
+}
+
+const graph = new Graph()
+const vertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+for(const vertex of vertices){
+  graph.addVertex(vertex)
+}
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('B', 'E');
+graph.addEdge('C', 'F');
+graph.addEdge('C', 'G');
+graph.addEdge('E', 'H');
+graph.addEdge('E', 'I');
+console.log('DFS 결과')
+graph.dfs('A')
