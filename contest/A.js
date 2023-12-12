@@ -21,8 +21,8 @@ function changeHair(array, result, count){
     }
     for(let i=0; i<array.length; i++){
         for(let size=2; i+size <= array.length; size++){
-            const bitResult = array.slice(i, i+size).reduce((acc,val)=>acc^val)
-            changeHair([...array.slice(0,i), ...Array.from({length : size}, ()=>bitResult), ...array.slice(i+size)], result, count+1)
+            const xor = array.slice(i, i+size).reduce((acc,val)=>acc^val)
+            changeHair([...array.slice(0,i), ...Array.from({length : size}, ()=>xor), ...array.slice(i+size)], result, count+1)
         }
     }
     return result
