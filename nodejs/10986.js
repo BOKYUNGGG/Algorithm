@@ -14,5 +14,11 @@ moduleAccs.push(numbers.reduce((acc,val)=>{
     moduleAccs.push(acc % M)
     return (acc + val) % M
 }))
+
+for(let i=0; i<N;i++){
+    for(let j=i;j<N;j++){
+        let 
+    }
+}
 console.log(sumAccs)
 console.log(moduleAccs)
